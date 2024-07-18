@@ -1,5 +1,6 @@
 .footer {
   border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
+
 }
 
 .footer:not(.color-scheme-1) {
@@ -7,9 +8,12 @@
 }
 
 .footer__content-top {
-  padding-bottom: 5rem;
-  display: block;
+
+  display: flex;
+  justify-content: space-between;
+
 }
+
 
 @media screen and (max-width: 749px) {
   .footer .grid {
@@ -33,6 +37,12 @@
   }
 }
 
+@media screen and (max-width: 750px) {
+  .footer__content-top {
+    display: block;
+  }
+}
+
 @media screen and (min-width: 750px) {
   .footer__content-top .grid {
     row-gap: 6rem;
@@ -41,7 +51,8 @@
 }
 
 .footer__content-bottom {
-  border-top: solid 0.1rem rgba(var(--color-foreground), 0.08);
+  border-top: solid 0.1rem gray;
+  opacity: 0.5;
   padding-top: 3rem;
 }
 
@@ -76,12 +87,12 @@
   }
 }
 
-.footer__localization:empty + .footer__column--info {
+.footer__localization:empty+.footer__column--info {
   align-items: center;
 }
 
 @media screen and (max-width: 749px) {
-  .footer__localization:empty + .footer__column {
+  .footer__localization:empty+.footer__column {
     padding-top: 1.5rem;
   }
 }
@@ -185,6 +196,7 @@
 }
 
 @media screen and (min-width: 750px) {
+
   /* Pushes other components to the right of the flexbox */
   .footer-block__newsletter:not(:only-child) {
     text-align: left;
@@ -203,6 +215,7 @@
   .footer__follow-on-shop {
     margin-bottom: 0.4rem;
   }
+
   /* Follow on shop is the first button but it has siblings*/
   .footer__follow-on-shop:first-child:not(:last-child) {
     justify-content: flex-start;
@@ -221,6 +234,7 @@
 }
 
 @media screen and (max-width: 749px) {
+
   /*
     On a small screen we want all the items to be centered
     because they will be stacked.
@@ -246,7 +260,7 @@
 }
 
 @media screen and (min-width: 750px) {
-  .footer-block__newsletter + .footer__list-social {
+  .footer-block__newsletter+.footer__list-social {
     margin-top: 0;
   }
 }
@@ -286,8 +300,11 @@
   }
 }
 
+
+
 .footer__content-bottom-wrapper--center {
-  justify-content: center;
+
+  justify-content: space-between;
 }
 
 .footer__copyright {
@@ -306,6 +323,7 @@
     opacity: 0;
     margin-top: -1rem;
   }
+
   100% {
     opacity: 1;
     margin-top: 0;
@@ -321,8 +339,8 @@
     margin-bottom: 0;
   }
 
-  .footer-block__details-content > p,
-  .footer-block__details-content > li {
+  .footer-block__details-content>p,
+  .footer-block__details-content>li {
     padding: 0;
   }
 
@@ -330,14 +348,14 @@
     display: inline;
   }
 
-  .footer-block__details-content > li:not(:last-child) {
+  .footer-block__details-content>li:not(:last-child) {
     margin-right: 1.5rem;
   }
 }
 
 .footer-block__details-content .list-menu__item--link,
 .copyright__content a {
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgb(255, 255, 255)
 }
 
 .footer-block__details-content .list-menu__item--active {
@@ -346,6 +364,7 @@
 }
 
 @media screen and (min-width: 750px) {
+
   .footer-block__details-content .list-menu__item--link:hover,
   .copyright__content a:hover {
     color: rgb(var(--color-foreground));
@@ -371,7 +390,7 @@
     font-size: 1.4rem;
   }
 
-  .footer-block__details-content > :first-child .list-menu__item--link {
+  .footer-block__details-content> :first-child .list-menu__item--link {
     padding-top: 0;
   }
 }
@@ -393,6 +412,7 @@
 }
 
 @media screen and (max-width: 749px) {
+
   .footer-block-image,
   .footer-block-image.left,
   .footer-block-image.center,
@@ -420,13 +440,13 @@
   text-align: center;
 }
 
-.footer-block:only-child > .footer-block__brand-info > .footer-block__image-wrapper {
+.footer-block:only-child>.footer-block__brand-info>.footer-block__image-wrapper {
   margin-left: auto;
   margin-right: auto;
 }
 
-.footer-block-image > img,
-.footer-block__brand-info > img {
+.footer-block-image>img,
+.footer-block__brand-info>img {
   height: auto;
 }
 
@@ -478,6 +498,7 @@
     padding: 0;
   }
 }
+
 @keyframes animateLocalization {
   0% {
     opacity: 0;
@@ -489,6 +510,7 @@
     transform: translateY(-1rem);
   }
 }
+
 
 /* check for flexbox gap in older Safari versions */
 @supports not (inset: 10px) {
