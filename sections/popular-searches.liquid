@@ -1,0 +1,75 @@
+{{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% comment %}
+  {%- liquid
+    assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+    assign show_mobile_slider = false
+    if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
+      assign show_mobile_slider = true
+    endif
+  -%}
+{% endcomment %}
+
+<div class="multicolumn-card__info">
+  {%- if block.settings.title != blank -%}
+    <a
+      class="link animate-arrow"
+      {% if settings.link == blank %}
+        role="link" aria-disabled="true"
+      {% else %}
+        href="{{ settings.link }}"
+      {% endif %}
+    >
+      <h3 class="inline-richtext">{{ settings.title }}</h3>
+    </a>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.popular-searches.name",
+  "class": "section",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "t:sections.multicolumn.blocks.column.settings.title.default",
+      "label": "t:sections.multicolumn.blocks.column.settings.title.label"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "t:sections.popular-searches.settings.title.default"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:sections.popular-searches.settings.title.default"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.popular-searches.presets.name"
+    }
+  ]
+}
+{% endschema %}

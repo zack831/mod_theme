@@ -1465,5 +1465,15 @@
         "default": "scheme-1"
       }
     ]
+  },
+  {
+    "name": "Add Pincode",
+    "settings": [
+      {
+        "type": "text",
+        "id": "pincodeinputarea",
+        "label": "Enter Pincodes"
+      },
+    ]
   }
 ]

@@ -1,0 +1,58 @@
+<div>
+  {% comment %}
+    Start of Cash on Delivery postal code checker snippet
+    Instructions:
+      1.Customize title, available, unavailable and placeholder messages below.
+      2.Customize success and failure colors.
+      3.Adjust the pixel spacing value (default 20) to best match the surroundings of the snippet.
+        This will adjust spacing above and below the snippet.
+  {% endcomment %}
+  {% assign title = 'Check Pincode Availability' %}
+  {% assign cod_available_message = 'Delivery is available!' %}
+  {% assign cod_unavailable_message = 'Delivery is not available to this postal code.' %}
+  {% assign placeholder_message = 'Postal code e.g. 797112' %}
+  {% assign check_button_text = 'Check' %}
+  {% assign success_color = '#468847' %}
+  {% assign failure_color = '#FF0000' %}
+  {% assign spacing_in_pixels = 20 %}
+  <h3 style="margin: {{ spacing_in_pixels | append: 'px' }} 0">{{ title | escape }}</h3>
+  <div style="display: flex; margin-bottom: {{ spacing_in_pixels | append: 'px' }};">
+    <input
+      type="text"
+      id="PostalCode"
+      name="PostalCode"
+      placeholder="{{ placeholder_message | escape }}"
+      style="margin: 0 {{ spacing_in_pixels | divided_by: 2 | append: 'px' }} 0 0;"
+      onkeypress="return event.keyCode != 13;"
+    >
+    <button type="button" id="btnid" class="btn button">
+      {{ check_button_text | escape }}
+    </button>
+  </div>
+  <p id="PostalCodeCheckerAvailability" style="display: none;"></p>
+</div>
+
+<script>
+    var pincodes = [{{ settings.pincodeinputarea }}];
+    console.log(pincodes);
+    var box = document.getElementById('PostalCodeCheckerAvailability');
+
+    function checkCodAvailability() {
+    var postalCode = document.getElementById('PostalCode').value;
+    console.log(postalCode);
+      box.style.display = 'block';
+      box.style.visibility = 'hidden';
+        if (pincodes.includes(parseInt(postalCode))) {
+          box.textContent = {{ cod_available_message | json }};
+          box.style.color = {{ success_color | json }};
+      } else {
+          box.textContent = {{ cod_unavailable_message | json }};
+          box.style.color = {{ failure_color | json }};
+      }
+      box.style.visibility = 'visible';
+  }
+
+  var buttonclk = document.getElementById('btnid');
+  buttonclk.addEventListener("click",checkCodAvailability)
+</script>
+{% comment %} End of Cash on Delivery postal code checker snippet {% endcomment %}
