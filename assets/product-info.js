@@ -176,6 +176,8 @@ if (!customElements.get('product-info')) {
           }
 
           this.updateMedia(html, variant?.featured_media?.id);
+          this.updateMediaGrouping();
+
 
           const updateSourceFromDestination = (id, shouldHide = (source) => false) => {
             const source = html.getElementById(`${id}-${this.sectionId}`);
@@ -309,6 +311,40 @@ if (!customElements.get('product-info')) {
         const newModalContent = html.querySelector(`product-modal .product-media-modal__content`);
         if (modalContent && newModalContent) modalContent.innerHTML = newModalContent.innerHTML;
       }
+
+      updateMediaGrouping() {
+        const mediaGallery = this.querySelector('media-gallery ul');
+        if (!mediaGallery) return;
+      
+        const groupVariants = mediaGallery.getAttribute('data-group-variants');
+        const hasOnlyDefaultVariant = mediaGallery.getAttribute('data-has-only-default-variant');
+        const disableImageGrouping = mediaGallery.getAttribute('data-disable-image-grouping');
+        
+        if (groupVariants === 'false' || hasOnlyDefaultVariant === 'true' || disableImageGrouping === 'true') return;
+      
+        const featuredMedia = mediaGallery.querySelector('.product__media-item.is-active');
+        const featuredVariantGrouping = featuredMedia ? featuredMedia.getAttribute('data-variant-grouping') : null;
+      
+        // Function to update visibility based on variant grouping
+        const updateVisibility = (mediaItem) => {
+          const mediaVariantGrouping = mediaItem.getAttribute('data-variant-grouping');
+          if (mediaVariantGrouping !== featuredVariantGrouping || mediaVariantGrouping === '') {
+            mediaItem.classList.add('hide-image');
+          } else {
+            mediaItem.classList.remove('hide-image');
+          }
+        };
+      
+        // Update media gallery
+        mediaGallery.querySelectorAll('.product__media-item, .thumbnail-list__item').forEach(updateVisibility);
+      
+        // Update modal content if it exists
+        const modalContent = this.productModal?.querySelector('.product-media-modal__content');
+        if (modalContent) {
+          modalContent.querySelectorAll('.product-modal-image').forEach(updateVisibility);
+        }
+      }
+      
 
       setQuantityBoundries() {
         const data = {
