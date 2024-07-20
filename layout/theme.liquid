@@ -314,6 +314,68 @@
       }
     </script>
   </head>
+  <style>
+    #PostalCode{
+    width:50%
+    }
+    #btnid{
+    width:50%
+  }
+
+    .icon-with-text--horizontal .icon-with-text__item{
+    
+      width:0;
+      border-radius: 50%;
+    padding: 25px;
+    box-shadow: rgb(111 7 54 / 89%) 2.4px 2.4px 3.2px;
+    }
+    @media (max-width: 999px) {
+      .card__content {
+       
+        z-index: 5;
+      }
+      
+    }
+
+    @media (min-width: 1000px) {
+      .card__content {
+        position: absolute !important;
+        top: 60%;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        align-items: center;
+        z-index: 5;
+        opacity: 0;
+        height: 100px;
+      }
+      li.grid__item.scroll-trigger.animate--slide-in:hover .card__content {
+        opacity: 1 !important;
+      }
+      li.grid__item.scroll-trigger.animate--slide-in:hover .card__media .media img {
+        opacity: 1;
+      }
+    }
+    @media (min-width: 1420px) {
+      .card__content {
+        position: absolute !important;
+        top: 60%;  
+        left: 0;
+        bottom: 0;
+        right: 0;
+        align-items: center;
+        height: 100px;
+        opacity: 0;
+        z-index: 5;
+      }
+      li.grid__item.scroll-trigger.animate--slide-in:hover .card__content {
+        opacity: 1 !important;
+      }
+      li.grid__item.scroll-trigger.animate--slide-in:hover .card__media .media img {
+        opacity: 0.8;
+      }
+    }
+  </style>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
