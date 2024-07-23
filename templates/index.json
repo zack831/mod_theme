@@ -6,6 +6,7 @@
         "slide_9Whjnf": {
           "type": "slide",
           "settings": {
+            "image": "shopify:\/\/shop_images\/woman-in-white-dress-outside.jpg",
             "link": "",
             "color_scheme": "",
             "text_alignment_mobile": "center"
@@ -14,6 +15,7 @@
         "slide_34Nt9A": {
           "type": "slide",
           "settings": {
+            "image": "shopify:\/\/shop_images\/deli-with-cured-meat-on-hooks-and-eggs-on-counter.jpg",
             "link": "",
             "color_scheme": "",
             "text_alignment_mobile": "center"
@@ -48,7 +50,7 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
+        "quick_add": "standard",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -56,7 +58,8 @@
     "image_banner_clickable_N7kwMr": {
       "type": "image-banner-clickable",
       "settings": {
-        "link": "",
+        "image": "shopify:\/\/shop_images\/beach-sunset-thailand.jpg",
+        "link": "shopify:\/\/collections\/just-arrived",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "middle-center",
@@ -67,6 +70,24 @@
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
         "show_text_below": true
+      }
+    },
+    "products_slider_3zwbMe": {
+      "type": "products_slider",
+      "settings": {
+        "title": "Collection",
+        "heading_size": "h1",
+        "collection": "kurta-sets",
+        "products_to_show": 9,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "image_with_text_tBcwFE": {
@@ -101,18 +122,49 @@
         "button_tDMHRX"
       ],
       "settings": {
-        "height": "adapt",
+        "image": "shopify:\/\/shop_images\/boots-on-blue.jpg",
+        "height": "medium",
         "desktop_image_width": "medium",
         "layout": "image_first",
-        "desktop_content_position": "top",
+        "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
+        "content_layout": "overlap",
         "section_color_scheme": "",
         "color_scheme": "",
-        "image_behavior": "none",
+        "image_behavior": "zoom-in",
         "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "1721753447d91e3462": {
+      "type": "apps",
+      "blocks": {
+        "whatmore_shoppable_videos_app_block_WiVFKK": {
+          "type": "shopify:\/\/apps\/whatmore-shoppable-videos\/blocks\/app-block\/20db8a72-315a-4364-8885-64219ee48303",
+          "settings": {
+            "heading": "Watch and Buy",
+            "template-type": "template-b",
+            "show-views": "show",
+            "ui-theme": "round",
+            "color-primary": "#343434",
+            "color-secondary": "#343434",
+            "title-font": "poppins_n4",
+            "primary-font": "poppins_n4",
+            "title-font-size": 40,
+            "title-font-size-portrait": 24,
+            "landscape-padding": 40,
+            "top-bottom-padding": 20,
+            "scroll-video-tile-size": 80,
+            "scroll-video-tile-size-portrait": 80
+          }
+        }
+      },
+      "block_order": [
+        "whatmore_shoppable_videos_app_block_WiVFKK"
+      ],
+      "settings": {
+        "include_margins": true
       }
     },
     "testimonial_AJKxcz": {
@@ -184,13 +236,36 @@
         "arrow_color": "#ffffff",
         "arrow_bg_color": "#000000"
       }
+    },
+    "1721753405d7091d6c": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_a7TLeb": {
+          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "alignment": "center",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_a7TLeb"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "slideshow_gkDppx",
     "products_slider_jJDDhG",
     "image_banner_clickable_N7kwMr",
+    "products_slider_3zwbMe",
     "image_with_text_tBcwFE",
-    "testimonial_AJKxcz"
+    "1721753447d91e3462",
+    "testimonial_AJKxcz",
+    "1721753405d7091d6c"
   ]
 }
