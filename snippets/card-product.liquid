@@ -34,6 +34,13 @@
     width: 300px;
     height: 300px;
   }
+  @media (max-width: 1027px) {
+    .card__badge {
+      position: absolute;
+      bottom: 5%;
+      left: 3%;
+    }
+  }
 </style>
 {%- unless skip_styles -%}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
