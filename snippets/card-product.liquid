@@ -24,12 +24,16 @@
 <style>
   .card__badge {
     position: absolute;
-    bottom: 10%;
+    bottom: 85%;
     left: 3%;
   }
   h3 {
     color: black;
-  
+  }
+  .media .media--transparent .media--hover-effect img {
+    width: 300px;
+    height: 300px;
+  }
 </style>
 {%- unless skip_styles -%}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
@@ -126,9 +130,11 @@
           </div>
         {%- endif -%}
         <div class="card__content">
-          {% comment %} <div class="card__information">
-            
-          </div> {% endcomment %}
+          {% comment %}
+            <div class="card__information">
+
+            </div>
+          {% endcomment %}
           <div class="card__badge {{ settings.badge_position }}">
             {%- if card_product.available == false -%}
               <span
@@ -150,7 +156,6 @@
       </div>
       <div class="card__content">
         <div class="card__information">
-          
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
@@ -195,7 +200,6 @@
               </p>
             {%- endif -%}
 
-            
             {%- if card_product.quantity_price_breaks_configured? -%}
               {% if card_product.variants.size == 1 and quick_add == 'bulk' %}
                 {% liquid
