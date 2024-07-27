@@ -772,8 +772,8 @@ summary::-webkit-details-marker {
 
 .title-wrapper-with-link {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
   margin-bottom: 3rem;
   flex-wrap: wrap;
@@ -839,10 +839,12 @@ summary::-webkit-details-marker {
 
 .title-wrapper--no-top-margin {
   margin-top: 0;
+  text-align: center;
 }
 
 .title-wrapper--no-top-margin>.title {
   margin-top: 0;
+  text-align: center;
 }
 
 .subtitle {
