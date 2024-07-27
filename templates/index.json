@@ -156,7 +156,8 @@
             "landscape-padding": 40,
             "top-bottom-padding": 20,
             "scroll-video-tile-size": 80,
-            "scroll-video-tile-size-portrait": 80
+            "scroll-video-tile-size-portrait": 80,
+            "min-height": 380
           }
         }
       },

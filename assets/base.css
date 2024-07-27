@@ -3582,3 +3582,15 @@ details-disclosure>details {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
 }
+
+@media(max-width: 700px) {
+  .desk {
+    display: none;
+  }
+}
+
+@media(min-width:900px) {
+  .mob {
+    display: none;
+  }
+}
