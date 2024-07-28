@@ -315,6 +315,22 @@
     </script>
   </head>
   <style>
+    @media screen and (min-width: 990px) {
+      .grid--4-col-desktop .grid__item {
+        width: calc(27.5% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
+        max-width: calc(27.5% - var(--grid-desktop-horizontal-spacing) * 3 / 4) !important;
+      }
+    }
+    @media screen and (min-width: 750px) {
+      .facets__disclosure-vertical {
+        border-top: 0.2rem solid rgb(0 0 0 / 10%) !important ;
+        margin-right: 0;
+      }
+    }
+    #ProductCountDesktop {
+      display: none;
+    }
+
     #PostalCode {
       width: 50%;
     }
@@ -366,7 +382,7 @@
     @media (min-width: 1000px) {
       .card__content {
         position: absolute !important;
-        top: 60%;
+        top: 64%;
         left: 0;
         bottom: 0;
         right: 0;
@@ -374,6 +390,8 @@
         z-index: 5;
         opacity: 0;
         height: 100px;
+        width: 100%;
+        padding: 0 !important;
       }
       li.grid__item.scroll-trigger.animate--slide-in:hover .card__content {
         opacity: 1 !important;
@@ -382,10 +400,11 @@
         opacity: 1;
       }
     }
+
     @media (min-width: 1420px) {
       .card__content {
         position: absolute !important;
-        top: 60%;
+        top: 64%;
         left: 0;
         bottom: 0;
         right: 0;
@@ -393,12 +412,25 @@
         height: 100px;
         opacity: 0;
         z-index: 5;
+        padding: 0 !important;
       }
       li.grid__item.scroll-trigger.animate--slide-in:hover .card__content {
         opacity: 1 !important;
       }
       li.grid__item.scroll-trigger.animate--slide-in:hover .card__media .media img {
         opacity: 0.8;
+      }
+    }
+    .card__information {
+      position: absolute;
+      width: 244px;
+
+      opacity: 0.8;
+      padding: 0 !important;
+    }
+    @media (max-width: 1200px) {
+      .card__information {
+        display: none;
       }
     }
   </style>

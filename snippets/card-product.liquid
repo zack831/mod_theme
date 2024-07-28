@@ -24,7 +24,7 @@
 <style>
   .card__badge {
     position: absolute;
-    bottom: 85%;
+    bottom: 100%;
     left: 3%;
   }
   h3 {
@@ -40,6 +40,88 @@
       bottom: 5%;
       left: 3%;
     }
+  }
+  .new-mera {
+    margin-top: 5px !important;
+  }
+  .hover-main {
+    background-color: #f1f1f1;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    opacity: 1;
+    padding-bottom: 5px;
+  }
+  .btn-main {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .btn1 {
+    padding: 6px 25px;
+    border: 1px solid black;
+    background-color: white;
+    position: relative;
+    z-index: 5;
+    opacity: 100;
+  }
+  .btn1:hover {
+    padding: 6px 25px;
+    border: 1px solid #601a3e;
+    background-color: #601a3e;
+    position: relative;
+    z-index: 5;
+    opacity: 100;
+    color: white;
+  }
+  .btn2 {
+    padding: 6px 25px;
+    border: 1px solid #601a3e;
+    background-color: #601a3e;
+    position: relative;
+    z-index: 5;
+    opacity: 100;
+    color: white;
+  }
+  .btn2:hover {
+    padding: 6px 25px;
+    border: 1px solid black;
+    background-color: #ffff;
+    position: relative;
+    z-index: 5;
+    opacity: 100;
+    color: black;
+  }
+  .size-main {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 4px 0px;
+  }
+  .size {
+    border: 1px solid #601a3e;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .size:hover {
+    border: 1px solid #601a3e;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+    background-color: #601a3e;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>
 {%- unless skip_styles -%}
@@ -206,6 +288,22 @@
                 </span>
               </p>
             {%- endif -%}
+
+            {% comment %} //yaha seh  start huwa hain //        {% endcomment %}
+            <div class="hover-main">
+              <div class="size-main">
+                <span class="size">xs</span>
+                <span class="size">s</span>
+                <span class="size">m</span>
+                <span class="size">l</span>
+                <span class="size">xl</span>
+                <span class="size">xxl</span>
+              </div>
+              <div class="btn-main">
+                <button class="btn1">Add Cart</button>
+                <button class="btn2">Buy Now</button>
+              </div>
+            </div>
 
             {%- if card_product.quantity_price_breaks_configured? -%}
               {% if card_product.variants.size == 1 and quick_add == 'bulk' %}
