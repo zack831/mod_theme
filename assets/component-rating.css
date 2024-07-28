@@ -17,6 +17,7 @@
   --font-size: 1.4;
 }
 
+
 .rating-star {
   --color-rating-star: rgb(var(--color-foreground));
   --percent: calc(
