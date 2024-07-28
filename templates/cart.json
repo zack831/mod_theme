@@ -34,6 +34,10 @@
     },
     "products_slider_N7UWeN": {
       "type": "products_slider",
+      "custom_css": [
+        "li {width: 245px; height: 350px;}",
+        "@media (max-width: 1027px) {li {height: 100%; }}"
+      ],
       "settings": {
         "title": "Also check out",
         "heading_size": "h1",
