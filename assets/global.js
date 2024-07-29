@@ -7,6 +7,7 @@ function getFocusableElements(container) {
 }
 
 $('.my_div').slick({
+  autoplay : true,
   autoplaySpeed: 1500,
   dots: false,
   infinite: true,
@@ -33,7 +34,7 @@ $('.my_div').slick({
     {
       breakpoint: 480,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
       },
     },

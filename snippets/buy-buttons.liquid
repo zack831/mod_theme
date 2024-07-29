@@ -11,11 +11,13 @@
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
 
-<style>
-  .product-form__submit {
-    width: 70px;
-  }
-</style>
+{% comment %}
+  <style>
+    .product-form__submit {
+      width: 70px;
+    }
+  </style>
+{% endcomment %}
 
 <div {{ block.shopify_attributes }}>
   {%- if product != blank -%}
