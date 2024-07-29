@@ -108,6 +108,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
   }
   .size:hover {
     border: 1px solid #601a3e;
@@ -123,12 +124,20 @@
     justify-content: center;
     align-items: center;
   }
-  .full-unstyled-link {
+  .full-unstyled-link1 {
     display: inline-flex;
     flex-wrap: wrap;
     gap: 12px;
     margin: 4px 0px;
-    text-decoration: none;
+    text-decoration: none !important;
+    color: #601a3e;
+  }
+  .full-unstyled-link1:hover {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 4px 0px;
+    text-decoration: none !important;
   }
 </style>
 {%- unless skip_styles -%}
@@ -285,7 +294,7 @@
                 <a
                   href="{{ card_product.url }}"
                   id="CardLink-{{ section_id }}-{{ card_product.id }}"
-                  class="full-unstyled-link"
+                  class="full-unstyled-link1"
                   aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
                 >
                   <span class="size"> xs</span>
