@@ -123,6 +123,13 @@
     justify-content: center;
     align-items: center;
   }
+  .full-unstyled-link {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 4px 0px;
+    text-decoration: none;
+  }
 </style>
 {%- unless skip_styles -%}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
@@ -224,23 +231,6 @@
 
             </div>
           {% endcomment %}
-          <div class="card__badge {{ settings.badge_position }}">
-            {%- if card_product.available == false -%}
-              <span
-                id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
-              >
-                {{- 'products.product.sold_out' | t -}}
-              </span>
-            {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-              <span
-                id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
-              >
-                {{- 'products.product.on_sale' | t -}}
-              </span>
-            {%- endif -%}
-          </div>
         </div>
       </div>
       <div class="card__content">
@@ -292,12 +282,19 @@
             {% comment %} //yaha seh  start huwa hain //        {% endcomment %}
             <div class="hover-main">
               <div class="size-main">
-                <span class="size">xs</span>
-                <span class="size">s</span>
-                <span class="size">m</span>
-                <span class="size">l</span>
-                <span class="size">xl</span>
-                <span class="size">xxl</span>
+                <a
+                  href="{{ card_product.url }}"
+                  id="CardLink-{{ section_id }}-{{ card_product.id }}"
+                  class="full-unstyled-link"
+                  aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
+                >
+                  <span class="size"> xs</span>
+                  <span class="size">s</span>
+                  <span class="size">m</span>
+                  <span class="size">l</span>
+                  <span class="size">xl</span>
+                  <span class="size">xxl</span>
+                </a>
               </div>
               <div class="btn-main">
                 {%- render 'buy-buttons',

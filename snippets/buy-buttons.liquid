@@ -10,6 +10,13 @@
   Usage:
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
+
+<style>
+  .product-form__submit {
+    width: 70px;
+  }
+</style>
+
 <div {{ block.shopify_attributes }}>
   {%- if product != blank -%}
     {%- liquid
@@ -57,7 +64,7 @@
           value="{{ product.selected_or_first_available_variant.id }}"
           {% if product.selected_or_first_available_variant.available == false
             or quantity_rule_soldout
-            or product.selected_or_first_available_variant == nil
+            or product.selected_or_first_available_variant == null
           %}
             disabled
           {% endif %}
@@ -85,13 +92,13 @@
             class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
             {% if product.selected_or_first_available_variant.available == false
               or quantity_rule_soldout
-              or product.selected_or_first_available_variant == nil
+              or product.selected_or_first_available_variant == null
             %}
               disabled
             {% endif %}
           >
             <span>
-              {%- if product.selected_or_first_available_variant == nil -%}
+              {%- if product.selected_or_first_available_variant == null -%}
                 {{ 'products.product.unavailable' | t }}
               {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}

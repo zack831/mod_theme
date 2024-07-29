@@ -7,7 +7,6 @@ function getFocusableElements(container) {
 }
 
 $('.my_div').slick({
-  autoplay: true,
   autoplaySpeed: 1500,
   dots: false,
   infinite: true,

@@ -10,6 +10,10 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "custom_css": [
+        "button {padding: 0 0;}",
+        ".card__content {top: 57.5%;}"
+      ],
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,

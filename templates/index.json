@@ -98,7 +98,8 @@
       "custom_css": [
         "li {width: 245px; height: 350px;}",
         "h3 {font-weight: bold; padding: 10px;}",
-        "@media (max-width: 1027px) {li {height: 100%; }}"
+        "@media (max-width: 1027px) {li {height: 100%; }}",
+        "@media only screen and (max-width: 1000px) {.card__information {display: block; margin-top: 100px; }}"
       ],
       "settings": {
         "title": "Top Collections",
@@ -117,7 +118,8 @@
       "type": "products_slider",
       "custom_css": [
         "li {width: 245px; height: 350px;}",
-        "@media (max-width: 1027px) {li {height: 100%; }}"
+        "@media (max-width: 1027px) {li {height: 100%; }}",
+        "button {padding: 0;}"
       ],
       "settings": {
         "title": "Featured collection",
